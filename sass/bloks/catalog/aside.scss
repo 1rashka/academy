@@ -1,0 +1,137 @@
+.aside__content {
+  min-height: 289px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    min-height: 100%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    background-image: url("../img/jpeg/aside-bacground.jpg");
+    background-repeat: no-repeat;
+    z-index: -2;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/jpeg/aside-bacground-x2.jpg");
+      background-position: 560px auto;
+      background-size: cover;
+    }
+  }
+}
+
+.aside__wrapper {
+  padding: 0 20px;
+  padding-top: 58px;
+  text-align: center;
+}
+
+.aside__text {
+  font-size: 16px;
+  line-height: 20px;
+  color: $color-white;
+}
+
+.aside__text-inner {
+  padding-top: 61px;
+  max-width: 161px;
+  margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  .aside__content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    min-height: 200px;
+
+
+    &::before {
+      width: 100%;
+      left: 0;
+    }
+
+    &::after {
+      background-image: url("../img/jpeg/aside-bacground-tablet.jpg");
+      left: 0;
+      background-position: 100%;
+      background-size: 100%;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/jpeg/aside-bacground-tablet-x2.jpg");
+      }
+    }
+  }
+
+  .aside__wrapper {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .aside__picture {
+    padding-left: 93px;
+  }
+
+  .aside__text {
+    text-align: left;
+  }
+
+  .aside__text-inner {
+    padding-top: 0;
+    padding-right: 124px;
+    margin: 0;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  .aside__content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    min-height: 288px;
+
+
+    &::before {
+      width: 100%;
+      left: 0;
+    }
+
+    &::after {
+      background-image: url("../img/jpeg/aside-background-desktop.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/jpeg/aside-background-desktop-x2.jpg");
+      }
+    }
+  }
+
+  .aside__wrapper {
+    flex-direction: column;
+  }
+
+  .aside__picture {
+    padding-left: 0;
+    padding-bottom: 60px;
+  }
+
+  .aside__text-inner {
+    max-width: 161px;
+    margin: 0 auto;
+    padding-right: 0;
+    text-align: center;
+  }
+}

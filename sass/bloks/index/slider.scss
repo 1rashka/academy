@@ -1,0 +1,37 @@
+.slider {
+  width: 100%;
+  z-index: 5;
+  top: 50%;
+}
+
+.slider__range {
+  width: 100%;
+  appearance: none;
+  background: inherit;
+  position: relative;
+  -webkit-appearance: none; /* stylelint-disable-line */ //Стайлинт ругается на браузерный префиксы//
+  -moz-appearance: none; /* stylelint-disable-line */
+  appearance: none; /* stylelint-disable-line */
+  z-index: 5;
+
+  &::-webkit-slider-thumb {
+    cursor: pointer;
+    -webkit-appearance: none; /* stylelint-disable-line */
+    -moz-appearance: none; /* stylelint-disable-line */
+    appearance: none; /* stylelint-disable-line */
+    width: 40px;
+    height: 260px;
+    background-image: url("../img/svg/curtain.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 767px) {
+  .slider__range {
+    &::-webkit-slider-thumb {
+      width: 40px;
+      height: 512px;
+      background-image: url("../img/svg/curtain-tablet.svg");
+    }
+  }
+}

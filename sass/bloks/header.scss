@@ -1,0 +1,169 @@
+.header__content {
+  max-width: 100%;
+}
+
+.header__nav {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 5;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.header__logo {
+  margin-left: 20px;
+}
+
+.header__menu {
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  top: 55px;
+  background-color: $color-white;
+  transition: 0.5s;
+  padding-top: 12px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.header__menu--no-js {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+}
+
+.header__burger {
+  margin-right: 20px;
+}
+
+.header__item {
+  border-top: 1px solid $color-border;
+}
+
+.header__link {
+  width: 100%;
+  display: block;
+  padding: 24px 0;
+  text-align: center;
+  color: $color-black;
+  text-transform: uppercase;
+}
+
+.header__active {
+  transition: 0.5s;
+
+  &::before {
+    transition: 0.5s;
+    top: 8px;
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transition: 0.5s;
+    bottom: 8px;
+    transform: rotate(45deg);
+  }
+
+  .header__line {
+    transition: 0.5s;
+    opacity: 0;
+  }
+}
+
+.header__active + .header__menu {
+  transition: 0.5s;
+  opacity: 1;
+  visibility: visible;
+}
+
+//TABLET
+@media (min-width: 767px) {
+  .header__content {
+    max-width: 707px;
+    margin: 0 auto;
+  }
+
+  .header__nav {
+    padding-top: 26px;
+  }
+
+
+  .header__alt-logo {
+    display: none;
+  }
+
+  .header__burger {
+    display: none;
+  }
+
+  .header__logo {
+    margin: 0;
+    flex-basis: 200px;
+  }
+
+  .header__menu {
+    flex-shrink: 1;
+    width: auto;
+    position: static;
+    z-index: 5px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header__list {
+    display: flex;
+  }
+
+  .header__item {
+    border: none;
+
+    &:not(:last-child) {
+      margin-right: 34px;
+    }
+  }
+
+  .header__link {
+    display: block;
+  }
+
+  .header__check {
+    text-decoration: underline $color-main;
+    text-underline-offset: 10px;
+  }
+}
+//TABLET
+
+//DESKTOP
+@media (min-width: 1440px) {
+  .header__content {
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+
+  .header__menu {
+    background-color: inherit;
+  }
+
+  .header__list {
+    position: relative;
+    z-index: 5;
+  }
+
+  .header__check {
+    text-underline-offset: 10px;
+  }
+
+  .header__link-index {
+    color: $color-white;
+  }
+
+  .header__check-index {
+    text-decoration: underline $color-white;
+  }
+}
+
+//DESKTOP
